@@ -63,8 +63,8 @@ function checkGameOver() {
   winningPostions.forEach((position) => {
     if (
       (gameGrid[position[0]] !== "" ||
-        gameGrid[position[1]] !== "" ||
-        gameGrid[position[2]] !== "") &&
+       gameGrid[position[1]] !== "" ||
+       gameGrid[position[2]] !== "") &&
       gameGrid[position[0]] === gameGrid[position[1]] &&
       gameGrid[position[0]] === gameGrid[position[2]]
     ) {
