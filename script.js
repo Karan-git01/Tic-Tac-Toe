@@ -50,6 +50,14 @@ function handleClick(index){
     }
 }
 
+// adding event listeners
+boxes.forEach((box, index) => {
+  box.addEventListener("click", () => {
+    handleClick(index);
+  });
+});
+
+
 function checkGameOver() {
   let result = "";
   winningPostions.forEach((position) => {
@@ -64,7 +72,7 @@ function checkGameOver() {
         box.style.pointerEvents = "none";
       });
       if (gameGrid[position[0]] === "x") result = "X";
-      else result = "Y";
+      else result = "O";
       boxes[position[0]].classList.add("win");
       boxes[position[1]].classList.add("win");
       boxes[position[2]].classList.add("win");
@@ -88,12 +96,6 @@ function checkGameOver() {
   }
 }
 
-// adding event listeners
-boxes.forEach((box, index) => {
-  box.addEventListener("click", () => {
-    handleClick(index);
-  });
-});
 
 
 initGame();
